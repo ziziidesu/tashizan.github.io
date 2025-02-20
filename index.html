@@ -1,0 +1,32 @@
+<py-repl>#randomモジュールをインポート
+import random
+
+#挑戦回数を入力
+intChallenge = int(input("挑戦回数を入力してね："))
+
+#ループ回数初期化
+intcount = 0
+#プレイヤーの正解数を初期化
+intPlayer = 0
+#指定した挑戦数分繰り返す
+for intcount in range(intChallenge):
+    #リスト初期化
+    lstKazu = [random.randint(0,999),random.randint(0,999)]
+
+    #出力する問題を生成
+    strQuestion = str(lstKazu[0]) + " ＋ " + str(lstKazu[1]) + " ＝ "
+    #回答を入力
+    intKotae = int(input(strQuestion))
+
+    #答え合わせ
+    if intKotae == sum(lstKazu):
+        print("正解！")
+        intPlayer += 1
+    else:
+        print("残念、間違い！")
+
+#最終結果
+if intPlayer == intChallenge:
+    print("おめでとう！！全問正解です！！")
+else:
+    print("残念、また挑戦してね")</py-repl>
